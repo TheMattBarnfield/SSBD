@@ -1,16 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import AppBar from '@material-ui/core/AppBar'
-import Drawer from '@material-ui/core/Drawer'
 import IconButton from '@material-ui/core/IconButton'
 import Menu from '@material-ui/icons/Menu'
-import './App.css';
-import {Route, Redirect, Switch} from 'react-router-dom';
-import Processes from './Processes'
-import Home from './Home'
-import Quality from './Quality'
-import Management from './Management'
-import Contact from './Contact'
-import NotFound from './NotFound'
+import Routing from './routing'
+import Toolbar from '@material-ui/core/Toolbar'
+import Navigation from './Navigation'
+import { Typography } from '@material-ui/core';
 
 type Props = {}
 
@@ -29,22 +24,15 @@ class App extends Component<Props, State> {
     return (
       <>
         <AppBar position='static'>
-          <IconButton 
-            onClick={this.openDrawer}
-          >
-            <Menu />
-          </IconButton>
+          <Toolbar>
+            <IconButton onClick={this.openDrawer} color='inherit'>
+              <Menu/>
+            </IconButton>
+            <Typography variant='h6' color='inherit'>SS Bright Drawers Ltd.</Typography>
+          </Toolbar>
         </AppBar>
-        <Switch>
-          <Redirect from='/index' to='/'/>
-          <Route path='/' exact component={Home}/>
-          <Route path='/processes' component={Processes}/>
-          <Route path='/quality' component={Quality}/>
-          <Route path='/management' component={Management}/>
-          <Route path='/contact-us' component={Contact}/>
-          <Route component={NotFound}/>
-        </Switch>
-        <Drawer open={this.state.drawerOpen} onClose={this.closeDrawer}>Menu item</Drawer>
+        <Navigation open={this.state.drawerOpen} onClose={this.closeDrawer}/>
+        <Routing/>
       </>
     );
   }
