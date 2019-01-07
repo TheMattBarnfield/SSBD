@@ -7,24 +7,30 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Navigation from './Navigation'
 import { Typography } from '@material-ui/core'
 import {Link} from 'react-router-dom'
+import Trees from './images/trees.jpg'
 
 export interface Page {
   path: string
   name: string
+  image: string
 }
 
 export const pages: Page[] = [{
     path: '/processes',
-    name: 'Processes'
+    name: 'Processes',
+    image: Trees
   }, {
     path: '/quality',
-    name: 'Quality'
+    name: 'Quality',
+    image: Trees
   }, {
     path: '/management',
-    name: 'Management'
+    name: 'Management',
+    image: Trees
   }, {
     path: '/contact-us',
-    name: 'Contact Us'
+    name: 'Contact Us',
+    image: Trees
 }]
 
 type Props = {}

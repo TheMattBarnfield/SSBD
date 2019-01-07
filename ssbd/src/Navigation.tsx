@@ -24,6 +24,6 @@ const Navigation :React.SFC<Props> = (props: Props) => <Drawer {...props}>
     </Drawer>
 
 const createNavigationLink = (listProps: Props) => (page: Page) =>
-    <NavigationLink to={page.path} closeDrawer={listProps.onClose}>{page.name}</NavigationLink>
+    <NavigationLink key={page.name} to={page.path} closeDrawer={listProps.onClose}>{page.name}</NavigationLink>
 
 export default Navigation;
