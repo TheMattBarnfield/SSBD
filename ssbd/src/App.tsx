@@ -24,6 +24,10 @@ export const pages: Page[] = [{
     name: 'Quality',
     image: Trees
   }, {
+    path: '/gdpr',
+    name: 'GDPR Statement',
+    image: Trees
+  }, {
     path: '/management',
     name: 'Management',
     image: Trees

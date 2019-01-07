@@ -8,7 +8,7 @@ import withWidth, { WithWidth } from '@material-ui/core/withWidth'
 
 const cols = {
     'xl': 5,
-    'lg': 4,
+    'lg': 3,
     'md': 3,
     'sm': 2,
     'xs': 1
