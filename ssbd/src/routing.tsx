@@ -6,14 +6,13 @@ import Quality from './Quality'
 import Management from './Management'
 import Contact from './Contact'
 import NotFound from './NotFound'
+import GDPR from './GDPR';
+import { pages } from './App';
 
 const Routing: React.SFC = () => <Switch>
     <Redirect from='/index' to='/'/>
     <Route path='/' exact component={Home}/>
-    <Route path='/processes' component={Processes}/>
-    <Route path='/quality' component={Quality}/>
-    <Route path='/management' component={Management}/>
-    <Route path='/contact-us' component={Contact}/>
+    {pages.map(page => <Route path={page.path} component={page.page}/>)}
     <Route component={NotFound}/>
 </Switch>
 
