@@ -3,6 +3,7 @@ import Drawer from '@material-ui/core/Drawer'
 import List from '@material-ui/core/List'
 import NavigationLink from './NavigationLink'
 import { ListItem, ListItemText } from '@material-ui/core';
+import {pages, Page} from './App'
 
 interface Props {
     open?: boolean
@@ -18,14 +19,11 @@ const Navigation :React.SFC<Props> = (props: Props) => <Drawer {...props}>
                 />
             </ListItem>
             <ListItem divider/>
-            {createNavigationLink(props, '/processes', 'Processes')}
-            {createNavigationLink(props, '/quality', 'Quality')}
-            {createNavigationLink(props, '/management', 'Management')}
-            {createNavigationLink(props, '/contact-us', 'Contact Us')}
+            {pages.map(createNavigationLink(props))}
         </List>
     </Drawer>
 
-const createNavigationLink = (listProps: Props, to: string, component: React.ReactNode) =>
-    <NavigationLink to={to} closeDrawer={listProps.onClose}>{component}</NavigationLink>
+const createNavigationLink = (listProps: Props) => (page: Page) =>
+    <NavigationLink to={page.path} closeDrawer={listProps.onClose}>{page.name}</NavigationLink>
 
 export default Navigation;

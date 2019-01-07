@@ -7,6 +7,26 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Navigation from './Navigation'
 import { Typography } from '@material-ui/core'
 import {Link} from 'react-router-dom'
+
+export interface Page {
+  path: string
+  name: string
+}
+
+export const pages: Page[] = [{
+    path: '/processes',
+    name: 'Processes'
+  }, {
+    path: '/quality',
+    name: 'Quality'
+  }, {
+    path: '/management',
+    name: 'Management'
+  }, {
+    path: '/contact-us',
+    name: 'Contact Us'
+}]
+
 type Props = {}
 
 interface State {
