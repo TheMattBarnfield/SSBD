@@ -5,8 +5,8 @@ import Menu from '@material-ui/icons/Menu'
 import Routing from './routing'
 import Toolbar from '@material-ui/core/Toolbar'
 import Navigation from './Navigation'
-import { Typography } from '@material-ui/core';
-
+import { Typography } from '@material-ui/core'
+import {Link} from 'react-router-dom'
 type Props = {}
 
 interface State {
@@ -28,7 +28,7 @@ class App extends Component<Props, State> {
             <IconButton onClick={this.openDrawer} color='inherit'>
               <Menu/>
             </IconButton>
-            <Typography variant='h6' color='inherit'>SS Bright Drawers Ltd.</Typography>
+            <Link to='/'><Typography variant='h4' color='inherit'>SS Bright Drawers Ltd.</Typography></Link>
           </Toolbar>
         </AppBar>
         <Navigation open={this.state.drawerOpen} onClose={this.closeDrawer}/>
