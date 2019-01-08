@@ -1,5 +1,4 @@
-import React, { Component, FormEvent } from 'react';
-import './App.css';
+import React, { Component, FormEvent } from 'react'
 import TextField from '@material-ui/core/TextField'
 import { Card, CardHeader, CardContent, Typography, MenuItem, Grid, Button, Snackbar } from '@material-ui/core';
 

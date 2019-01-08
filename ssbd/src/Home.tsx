@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import './App.css';
 import Typography from '@material-ui/core/Typography'
 import Divider from '@material-ui/core/Divider'
 import HomeGridList from './HomeGridList'

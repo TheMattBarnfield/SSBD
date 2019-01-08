@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
-import './App.css';
-import managers, {Manager} from './Managers';
-import ManagerDetailsCard from './ManagerDetailsCard';
-import { Grid, Typography, Divider } from '@material-ui/core';
+import React, { Component } from 'react'
+import managers, {Manager} from './Managers'
+import ManagerDetailsCard from './ManagerDetailsCard'
+import { Grid, Typography, Divider } from '@material-ui/core'
 
 const Management: React.SFC = props => <div style={{padding: 36}}>
   <Grid container spacing={24}>
