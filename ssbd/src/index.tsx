@@ -18,7 +18,7 @@ const theme = createMuiTheme({
 })
 
 const app = <MuiThemeProvider theme={theme}>
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
         <App/>
     </BrowserRouter>
 </MuiThemeProvider>
