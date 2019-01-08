@@ -7,11 +7,23 @@ import Toolbar from '@material-ui/core/Toolbar'
 import Navigation from './Navigation'
 import { Typography } from '@material-ui/core'
 import {Link} from 'react-router-dom'
-
+import Contact from '@material-ui/icons/ContactSupport'
+import Facebook from './images/facebook logo.png'
+import LinkedIn from './images/linkedin logo.png'
+import Tooltip from '@material-ui/core/Tooltip';
 type Props = {}
 
 interface State {
   drawerOpen: boolean
+}
+
+const imageStyle = {
+  height: 24,
+  width: 24
+}
+
+const spacerStyle = {
+  flexGrow: 1
 }
 
 class App extends Component<Props, State> {
@@ -25,11 +37,12 @@ class App extends Component<Props, State> {
     return (
       <>
         <AppBar position='static'>
-          <Toolbar>
-            <IconButton onClick={this.openDrawer} color='inherit'>
-              <Menu/>
-            </IconButton>
-            <Link to='/'><Typography variant='h4' color='inherit'>SS Bright Drawers Ltd.</Typography></Link>
+          <Toolbar variant='dense'>
+            <IconButton onClick={this.openDrawer} color='inherit'><Menu/></IconButton>
+            <div style={spacerStyle}/>
+            <Tooltip title='Contact us'><IconButton color='inherit'><Contact/></IconButton></Tooltip>
+            <Tooltip title='Find us on LinkedIn'><IconButton href='http://www.linkedin.com'><img src={LinkedIn} alt='LinkedIn' style={imageStyle}/></IconButton></Tooltip>
+            <Tooltip title='Find us on Facebook'><IconButton href='http://www.facebook.com'><img src={Facebook} alt='Facebook' style={imageStyle}/></IconButton></Tooltip>
           </Toolbar>
         </AppBar>
         <Navigation open={this.state.drawerOpen} onClose={this.closeDrawer}/>

@@ -2,8 +2,10 @@ import React, { Component } from 'react'
 import Drawer from '@material-ui/core/Drawer'
 import List from '@material-ui/core/List'
 import NavigationLink from './NavigationLink'
-import { ListItem, ListItemText } from '@material-ui/core'
+import { ListItem } from '@material-ui/core'
 import pages, {Page} from './Pages'
+import Logo from './images/Logo.jpg'
+import {Link} from 'react-router-dom'
 
 interface Props {
     open?: boolean
@@ -13,12 +15,8 @@ interface Props {
 const Navigation :React.SFC<Props> = (props: Props) => <Drawer {...props}>
         <List>
             <ListItem>
-                <ListItemText 
-                    primary='SS Bright Drawers Ltd.'
-                    primaryTypographyProps={{variant: 'subtitle1'}}
-                />
+                <Link to='/' onClick={props.onClose}><img src={Logo} alt='SS Bright Drawers Ltd.'/></Link>
             </ListItem>
-            <ListItem divider/>
             {pages.map(createNavigationLink(props))}
         </List>
     </Drawer>
