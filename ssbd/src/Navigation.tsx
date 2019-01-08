@@ -12,10 +12,14 @@ interface Props {
     onClose?: () => void
 }
 
-const Navigation :React.SFC<Props> = (props: Props) => <Drawer {...props}>
+const logoStyle = {maxWidth: '100%', width: 'auto', height: 'auto'}
+const paperStyle = {maxWidth: 200}
+const Navigation: React.SFC<Props> = (props: Props) => <Drawer PaperProps={{style: paperStyle}} {...props}>
         <List>
             <ListItem>
-                <Link to='/' onClick={props.onClose}><img src={Logo} alt='SS Bright Drawers Ltd.'/></Link>
+                <Link to='/' onClick={props.onClose}>
+                    <img src={Logo} alt='SS Bright Drawers Ltd.' style={logoStyle}/>
+                </Link>
             </ListItem>
             {pages.map(createNavigationLink(props))}
         </List>

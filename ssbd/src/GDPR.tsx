@@ -1,11 +1,14 @@
 import React from 'react'
 import Card from '@material-ui/core/Card'
 import CardHeader from '@material-ui/core/CardHeader'
+import CardMedia from '@material-ui/core/CardMedia'
 import CardContent from '@material-ui/core/CardContent'
-import { Typography } from '@material-ui/core';
+import { Typography } from '@material-ui/core'
+import Logo from './images/Logo.jpg'
 
-const GDPR: React.SFC = () => <Card style={{margin: 24}}>
+const GDPR: React.SFC = () => <Card style={{margin: 24, padding: 24}}>
     <CardHeader title='Privacy Notice'/>
+    <CardMedia style={{height:0, paddingTop: '30%'}} image={Logo} title='SS Bright Drawers Ltd.'/>
     <CardContent>
         <Typography>
         <ul>
