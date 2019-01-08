@@ -14,6 +14,30 @@ const managers: Manager[] = [{
     image: Trees,
     role: 'CEO',
     phoneNumber: '12345678910'
+}, {
+    name: 'John Smith',
+    email: 'j.s@ssbrightdrawers.co.uk',
+    image: Trees,
+    role: 'CEO',
+    phoneNumber: '12345678910'
+}, {
+    name: 'John Smith',
+    email: 'j.s@ssbrightdrawers.co.uk',
+    image: Trees,
+    role: 'CEO',
+    phoneNumber: '12345678910'
+}, {
+    name: 'John Smith',
+    email: 'j.s@ssbrightdrawers.co.uk',
+    image: Trees,
+    role: 'CEO',
+    phoneNumber: '12345678910'
+}, {
+    name: 'John Smith',
+    email: 'j.s@ssbrightdrawers.co.uk',
+    image: Trees,
+    role: 'CEO',
+    phoneNumber: '12345678910'
 }]
 
 export default managers
