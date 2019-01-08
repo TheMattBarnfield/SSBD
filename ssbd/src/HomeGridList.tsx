@@ -5,6 +5,7 @@ import pages, {Page} from './Pages'
 import {Link} from 'react-router-dom'
 import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos'
 import withWidth, { WithWidth } from '@material-ui/core/withWidth'
+import IconButton from '@material-ui/core/IconButton';
 
 const cols = {
     'xl': 5,
@@ -20,15 +21,17 @@ const HomeGridList: React.SFC<WithWidth> = props =>
     </GridList>
 
 const makeGridListTile = (page: Page) => <GridListTile key={page.name}>
+    <Link to={page.path}>
     <img src={page.image} alt={page.name}/>
     <GridListTileBar 
         title={page.name}
         actionIcon={
-            <Link to={page.path} style={{textDecoration: 'none', color: 'rgba(255,255,255,0.54'}}>
-                <ArrowForwardIos/>
-            </Link>
+            <IconButton>
+                <ArrowForwardIos style={{color: 'rgba(255,255,255,0.54'}}/>
+            </IconButton>
         }
     />
+    </Link>
 </GridListTile>
 
 export default withWidth()(HomeGridList)
