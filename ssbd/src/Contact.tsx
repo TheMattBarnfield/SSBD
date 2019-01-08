@@ -74,32 +74,36 @@ class Contact extends Component<{}, State> {
       {...replyDetailsProps[this.state.replyMethod]}
     />
 
-    const submitButton = <Button type='submit'>Send Message</Button>
+    const submitButton = <Button
+      type='submit'
+      variant='contained'
+      color='primary'
+    >
+        Send Message
+    </Button>
 
-    const card = <Card>
+    const card = <Card style={{margin: 24}}>
       <CardHeader title='Make an enquiry' />
       <CardContent>
         <form id='gform' onSubmit={this.submitForm}>
-          <Grid container spacing={24}>
+          <Grid container spacing={24} justify='center'>
             <Grid item xs={12}><Typography>{cardMessage}</Typography></Grid>
             <Grid item xs={12}>{messageField}</Grid>
             <Grid item xs={12} sm={6} md={4}>{replyMethod}</Grid>
             <Grid item xs={12} sm={6} md={4}>{replyDetails}</Grid>
-            <Grid item xs={12} md={4}>{submitButton}</Grid>
+            <Grid item container xs={12} md={4} justify='center' alignItems='center'>{submitButton}</Grid>
           </Grid>
         </form>
         <Snackbar
           open={this.state.submissionSuccess}
           autoHideDuration={5000}
           onClose={() => this.setState({submissionSuccess: false})}
-          color='primary'
           message={'Thank you for your enquiry! We\'ll get back to you as soon as possible.'}
         />
         <Snackbar
           open={this.state.submissionError}
           autoHideDuration={5000}
           onClose={() => this.setState({submissionError: false})}
-          color='error'
           message='Something went wrong with the request, please try again.'
         />
       </CardContent>
