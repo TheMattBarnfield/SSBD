@@ -7,7 +7,7 @@ import pages from './Pages'
 const Routing: React.SFC = () => <Switch>
     <Redirect from='/index' to='/'/>
     <Route path='/' exact component={Home}/>
-    {pages.map(page => <Route path={page.path} component={page.page}/>)}
+    {pages.map(page => <Route key={page.name} path={page.path} component={page.page}/>)}
     <Route component={NotFound}/>
 </Switch>
 
