@@ -2,8 +2,8 @@ import React, { Component } from 'react'
 import Drawer from '@material-ui/core/Drawer'
 import List from '@material-ui/core/List'
 import NavigationLink from './NavigationLink'
-import { ListItem, ListItemText } from '@material-ui/core';
-import {pages, Page} from './App'
+import { ListItem, ListItemText } from '@material-ui/core'
+import pages, {Page} from './Pages'
 
 interface Props {
     open?: boolean

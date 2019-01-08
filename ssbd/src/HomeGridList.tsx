@@ -1,7 +1,7 @@
 import React from 'react'
 import GridList from '@material-ui/core/GridList'
-import { GridListTile, GridListTileBar, IconButton } from '@material-ui/core';
-import { pages, Page } from './App';
+import { GridListTile, GridListTileBar } from '@material-ui/core'
+import pages, {Page} from './Pages'
 import {Link} from 'react-router-dom'
 import ArrowForwardIos from '@material-ui/icons/ArrowForwardIos'
 import withWidth, { WithWidth } from '@material-ui/core/withWidth'
