@@ -5,6 +5,7 @@ import Quality from './Quality';
 import GDPR from './GDPR';
 import Management from './Management';
 import Contact from './Contact';
+import WhoWeAre from './WhoWeAre';
 
 export interface Page {
     path: string
@@ -14,6 +15,11 @@ export interface Page {
   }
 
 const pages: Page[] = [{
+    path: '/whoweare',
+    name: 'Who We Are',
+    page: WhoWeAre,
+    image: Trees
+  },{
     path: '/processes',
     name: 'Processes',
     page: Processes,
