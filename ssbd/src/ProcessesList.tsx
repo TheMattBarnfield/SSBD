@@ -66,7 +66,7 @@ class ProcessesList extends Component<{}, State> {
   }
   render() {
     const makeImage = (image: string, alt: string) =>
-      <img src={image} alt={alt} style={{width:'100%'}}/>
+      <img src={image} alt={alt} style={{width:'100%', borderRadius:5}}/>
 
     const makeUnorderedList = (content:string[]) => <ul>
       {content.map(c => <li><Typography>{c}</Typography></li>)}

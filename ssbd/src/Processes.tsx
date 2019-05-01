@@ -8,7 +8,7 @@ const Processes: React.SFC<{}> = props => {
   const preamble = 
     <Typography>SS Bright Drawers process material for High Pressure Manifolds for the oil and gas industry as well as material to be used in the medical, fasteners, catering, automotive, aerospace, nuclear, high tensile, nautical and rail applications.</Typography>
 
-  const image = <img src={ColdDrawn} alt='Processes' style={{width:'100%'}}/>
+  const image = <img src={ColdDrawn} alt='Processes' style={{width:'100%', borderRadius:5}}/>
 
   return <ContentPage title='Products and Processes'>
     <div style={{padding:12}}>
