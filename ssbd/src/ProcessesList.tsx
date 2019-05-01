@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
 import {ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Typography, Grid} from '@material-ui/core'
-import Trees from './images/trees.jpg'
+import CentrelessGrind from './images/centrelessGrind.jpg'
+import HexagonBar from './images/hexagonBars.jpg'
+import Straightening from './images/straightening.jpg'
+import BrightDrawing from './images/brightdrawing.jpg'
+import ShotBlasting from './images/shotblasting.jpg'
 
 interface State {
   open: boolean
@@ -20,25 +24,25 @@ const processes: Process[] = [{
     'Flat bars up to 170mm x 50mm',
     'Hexagon bars up to 75mm diameter'
   ],
-  image: Trees
+  image: Straightening
 }, {
   title: 'Bright Drawing',
   content: [
     'Up to 80mm section size'
   ],
-  image: Trees
+  image: BrightDrawing
 }, {
   title: 'Centreless Grinding',
   content: [
     'Up to 50mm diameter'
   ],
-  image: Trees
+  image: CentrelessGrind
 }, {
   title: 'Flat and Hexagon Bar Polishing',
   content: [
     'Up to 75mm section size'
   ],
-  image: Trees
+  image: HexagonBar
 }, {
   title: 'Other Processes',
   content: [
@@ -49,7 +53,7 @@ const processes: Process[] = [{
     'Stainless Steel bar cleaning (acid)',
     'Further processes may be available upon request'
   ],
-  image: Trees
+  image: ShotBlasting
 },
 ]
 
@@ -74,8 +78,8 @@ class ProcessesList extends Component<{}, State> {
       </ExpansionPanelSummary>
       <ExpansionPanelDetails>
         <Grid container>
-          <Grid item xs={12} sm={4}>{makeImage(process.image, process.title)}</Grid>
-          <Grid item xs={12} sm={8}>{makeUnorderedList(process.content)}</Grid>
+          <Grid item xs={12} sm={5}>{makeImage(process.image, process.title)}</Grid>
+          <Grid item xs={12} sm={7}>{makeUnorderedList(process.content)}</Grid>
         </Grid>
       </ExpansionPanelDetails>
     </ExpansionPanel>
