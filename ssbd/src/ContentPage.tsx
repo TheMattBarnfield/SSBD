@@ -7,8 +7,8 @@ interface Props {
 }
 
 const ContentPage: React.SFC<Props> = (props:Props) =>
-    <div style={{margin:24}}>
-      <div style={{margin:24}}>
+    <div style={{padding:24}}>
+      <div style={{margin:8}}>
         <Typography variant='h4' color='primary' gutterBottom>{props.title}</Typography>
         <Divider />
       </div>
