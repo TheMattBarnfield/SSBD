@@ -6,6 +6,9 @@ import GDPR from './GDPR';
 import Management from './Management';
 import Contact from './Contact';
 import WhoWeAre from './WhoWeAre';
+import QualityImage from './images/quality.jpg'
+import Factory from './images/factory.jpg'
+import CentrelessBars from './images/centrelessbars.jpg'
 
 export interface Page {
     path: string
@@ -15,20 +18,20 @@ export interface Page {
   }
 
 const pages: Page[] = [{
-    path: '/whoweare',
+    path: '/who-we-are',
     name: 'Who We Are',
     page: WhoWeAre,
-    image: Trees
+    image: Factory
   },{
     path: '/processes',
     name: 'Processes',
     page: Processes,
-    image: Trees
+    image: CentrelessBars
   }, {
     path: '/quality',
     name: 'Quality',
     page: Quality,
-    image: Trees
+    image: QualityImage
   }, {
     path: '/gdpr',
     name: 'GDPR Statement',

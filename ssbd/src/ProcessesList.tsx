@@ -74,7 +74,7 @@ class ProcessesList extends Component<{}, State> {
 
     const makeExpansionPanel = (process: Process) => <ExpansionPanel>
       <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
-        <Typography variant='h6'>{process.title}</Typography>
+        <Typography variant='h6' color='primary'>{process.title}</Typography>
       </ExpansionPanelSummary>
       <ExpansionPanelDetails>
         <Grid container>

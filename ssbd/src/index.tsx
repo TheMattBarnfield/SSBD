@@ -11,9 +11,15 @@ import teal from '@material-ui/core/colors/teal'
 const theme = createMuiTheme({
     palette: {
         primary: {
-            main: '#316b9b'
+            main: '#316b9b',
+            contrastText: 'white'
         },
-        secondary: teal
+        background: {
+            paper: '#fcfcfc'
+        },
+        text: {
+            primary: 'rgba(0, 0, 0, 0.87)'
+        }
     }
 })
 

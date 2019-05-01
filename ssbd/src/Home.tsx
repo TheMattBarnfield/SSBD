@@ -14,7 +14,7 @@ const logoStyle = {maxWidth: '75%', width: 'auto', height: 'auto'}
 const Home: React.SFC<{}> = () => <div style={{padding: 20, textAlign: 'center'}}>
     <img src={Logo} alt='SS Bright Drawers Ltd.' style={logoStyle}/>
     <Typography align='center' style={sloganStyle} variant='h6'>
-      "Your trusted partner for Bright Drawing, Centreless Grinding and Surface Finishing solutions"
+      Your trusted partner for Bright Drawing, Centreless Grinding and Surface Finishing solutions
     </Typography>
     <Divider variant='middle'/>
     <HomeGridList />

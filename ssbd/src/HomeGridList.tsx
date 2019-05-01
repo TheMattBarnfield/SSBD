@@ -22,7 +22,7 @@ const HomeGridList: React.SFC<WithWidth> = props =>
 
 const makeGridListTile = (page: Page) => <GridListTile key={page.name}>
     <Link to={page.path}>
-    <img src={page.image} alt={page.name}/>
+    <img src={page.image} alt={page.name} style={{width:'100%'}}/>
     <GridListTileBar 
         title={page.name}
         actionIcon={

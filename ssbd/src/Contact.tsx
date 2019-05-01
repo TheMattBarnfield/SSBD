@@ -1,6 +1,7 @@
 import React, { Component, FormEvent } from 'react'
 import TextField from '@material-ui/core/TextField'
 import { Card, CardHeader, CardContent, Typography, MenuItem, Grid, Button, Snackbar } from '@material-ui/core';
+import ContentPage from './ContentPage';
 
 interface State {
   message: string
@@ -81,12 +82,11 @@ class Contact extends Component<{}, State> {
         Send Message
     </Button>
 
-    const card = <Card style={{margin: 24}}>
+    const card = <Card>
       <CardHeader title='Make an enquiry' />
       <CardContent>
         <form id='gform' onSubmit={this.submitForm}>
           <Grid container spacing={24} justify='center'>
-            <Grid item xs={12}><Typography>{cardMessage}</Typography></Grid>
             <Grid item xs={12}>{messageField}</Grid>
             <Grid item xs={12} sm={6} md={4}>{replyMethod}</Grid>
             <Grid item xs={12} sm={6} md={4}>{replyDetails}</Grid>
@@ -108,7 +108,12 @@ class Contact extends Component<{}, State> {
       </CardContent>
     </Card>
 
-    return card
+    return <ContentPage title='Contact Us'>
+    <div style={{padding:12}}>
+      <Typography>{cardMessage}</Typography>
+    </div>
+    {card}
+    </ContentPage>
   }
 
   private submitForm = (event: any) => {

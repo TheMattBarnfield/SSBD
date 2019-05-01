@@ -9,7 +9,7 @@ const GDPR: React.SFC = () => <ContentPage title='Privacy Notice'>
 <p>This notice describes how SS Bright Drawers (Sheffield) Ltd collect and use personal data about our customers and suppliers, in accordance with the General Data Protection Regulation (GDPR), the Data Protection Act 1998 and any other national implementing laws, regulations and secondary regulation, as amended or updated from time to time, in the UK (Data Protection Legislation).</p></li>
 
             
-	<li>Company Details
+	<li>Company Details<br/>
 SS Bright Drawers (Sheffield) Ltd is a limited company registered in England and Wales under number 1851422. Our registered office is: <br/>
 <p>SS Bright Drawers (Sheffield) Ltd, <br></br>
 Worthing Road, <br></br>

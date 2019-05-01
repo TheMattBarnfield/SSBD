@@ -42,7 +42,7 @@ class App extends Component<Props, State> {
         <AppBar position='static'>
           <Toolbar variant='dense'>
             <IconButton onClick={this.openDrawer} color='inherit'><Menu/></IconButton>
-            <Link to='/index' style={{textDecoration: 'none', color:'white'}}>
+            <Link to='/index' style={{textDecoration: 'none', color:'inherit'}}>
                 <Typography variant='h6' color='inherit' noWrap>{appTitle}</Typography>
             </Link>
             <div style={spacerStyle}/>
