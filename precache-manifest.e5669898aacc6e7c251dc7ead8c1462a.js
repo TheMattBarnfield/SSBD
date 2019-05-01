@@ -1,15 +1,15 @@
 self.__precacheManifest = [
   {
-    "revision": "00ee6f7444ec6645578d006949cdfe31",
-    "url": "/SSBD/static/media/straightening.00ee6f74.jpg"
+    "revision": "5b1e1fda206cc0451e49d10fb8e36183",
+    "url": "/SSBD/static/media/shotblasting.5b1e1fda.jpg"
   },
   {
-    "revision": "08144a188fd22e064a09",
-    "url": "/SSBD/static/css/main.42d04935.chunk.css"
+    "revision": "ed1ed1d51686b4c9e4a1",
+    "url": "/SSBD/static/css/main.88b67012.chunk.css"
   },
   {
-    "revision": "147fc3d6c6393d50ad57",
-    "url": "/SSBD/static/js/1.147fc3d6.chunk.js"
+    "revision": "2026ed131d1346010e10",
+    "url": "/SSBD/static/js/1.2026ed13.chunk.js"
   },
   {
     "revision": "2eb5d171405ac4924984",
@@ -32,16 +32,16 @@ self.__precacheManifest = [
     "url": "/SSBD/static/media/hexagonBars.957faacf.jpg"
   },
   {
-    "revision": "08144a188fd22e064a09",
-    "url": "/SSBD/static/js/main.08144a18.chunk.js"
+    "revision": "00ee6f7444ec6645578d006949cdfe31",
+    "url": "/SSBD/static/media/straightening.00ee6f74.jpg"
   },
   {
     "revision": "97a09f3aa26eef7051b058d1f2410ab6",
     "url": "/SSBD/static/media/brightdrawing.97a09f3a.jpg"
   },
   {
-    "revision": "5b1e1fda206cc0451e49d10fb8e36183",
-    "url": "/SSBD/static/media/shotblasting.5b1e1fda.jpg"
+    "revision": "ed1ed1d51686b4c9e4a1",
+    "url": "/SSBD/static/js/main.ed1ed1d5.chunk.js"
   },
   {
     "revision": "1156a2b5f45a5537704da56f32a2903d",
@@ -60,7 +60,27 @@ self.__precacheManifest = [
     "url": "/SSBD/static/media/ISO logo.dea866a6.gif"
   },
   {
-    "revision": "ba7ac4df94e614f912578bc1adb78b31",
+    "revision": "73f70514e07ea952b1d2cc0e43db0869",
+    "url": "/SSBD/static/media/drawingunit.73f70514.jpg"
+  },
+  {
+    "revision": "835d4d289c1c2eb3e825577b1feb4424",
+    "url": "/SSBD/static/media/straightness.835d4d28.jpg"
+  },
+  {
+    "revision": "90a6a6ef1826b4c0bdc19974950dfe04",
+    "url": "/SSBD/static/media/quality.90a6a6ef.jpg"
+  },
+  {
+    "revision": "05760d418dbc297166bd3abc0ef1c528",
+    "url": "/SSBD/static/media/factory.05760d41.jpg"
+  },
+  {
+    "revision": "4ab7966a0acb31a9e397cae2092fea1a",
+    "url": "/SSBD/static/media/centrelessbars.4ab7966a.jpg"
+  },
+  {
+    "revision": "7b14e5e0fb7ca6d857460ebd158c5613",
     "url": "/SSBD/index.html"
   }
 ];
