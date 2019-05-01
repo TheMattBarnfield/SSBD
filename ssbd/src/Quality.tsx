@@ -5,6 +5,8 @@ import BSI from './images/bsi logo.jpg'
 import BSSA from './images/BSSA logo.jpg'
 import ISO from './images/ISO logo.gif'
 import CloudDownload from '@material-ui/icons/CloudDownload'
+import ContentPage from './ContentPage';
+import withWidth, { WithWidth } from '@material-ui/core/withWidth';
 
 interface Certificate {
   name: string,
@@ -26,27 +28,35 @@ const certificates: Certificate[] = [{
   file: 'bssa'
 }]
 
-const Quality: React.SFC = () => {
+const columns = {
+  'xl': 3,
+  'lg': 3,
+  'md': 3,
+  'sm': 2,
+  'xs': 1
+}
+
+const Quality: React.SFC<WithWidth> = (props: WithWidth) => {
     const makeGridListTile = (certificate: Certificate) => <GridListTile key={certificate.name}>
       <a href={`./certificates/${certificate.file}.pdf`} download>
         <img src={certificate.logo} alt={certificate.name} style={{width:'100%', height:'100%'}}/>
         <GridListTileBar 
-            title={certificate.name}
-            actionIcon={
-                <IconButton>
-                  <CloudDownload style={{color: 'rgba(255,255,255,0.54'}}/>
-                </IconButton>
-            }
+          title={certificate.name}
+          actionIcon={
+            <IconButton>
+              <CloudDownload style={{color: 'rgba(255,255,255,0.54'}}/>
+            </IconButton>
+          }
         />
       </a>
     </GridListTile>
     
-    const certificateGridList = <GridList cols={3} spacing={20} style={{margin: 20}}>
+    const certificateGridList = <GridList cols={columns[props.width]} spacing={20} style={{margin: 20}}>
       {certificates.map(makeGridListTile)}
     </GridList>
 
     const qualityCard = <Card>
-      <CardHeader title='Quality'/>
+      <CardHeader title='Accreditation'/>
       <CardContent>
         <p>SS Bright Drawers operate a Quality Management System in compliance with ISO 9001:2015. Please download our accreditation certificate here if required.</p>
         {certificateGridList}
@@ -74,12 +84,14 @@ const Quality: React.SFC = () => {
       </CardContent>
     </Card>
 
-    return <div style={{padding: 24}}><Grid container spacing={24}>
-      <Grid item xs={12}>{qualityCard}</Grid>
-      <Grid item xs={12} lg={6}>{tolerancesCard}</Grid>
-      <Grid item xs={12} lg={6}>{standardsCard}</Grid>
-    </Grid></div>
+    return <ContentPage title='Quality'>
+      <Grid container spacing={24}>
+        <Grid item xs={12}>{qualityCard}</Grid>
+        <Grid item xs={12} lg={6}>{tolerancesCard}</Grid>
+        <Grid item xs={12} lg={6}>{standardsCard}</Grid>
+      </Grid>
+    </ContentPage>
 
 }
 
-export default Quality;
+export default withWidth()(Quality);

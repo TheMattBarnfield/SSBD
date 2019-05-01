@@ -1,15 +1,8 @@
 import React from 'react'
-import Card from '@material-ui/core/Card'
-import CardHeader from '@material-ui/core/CardHeader'
-import CardMedia from '@material-ui/core/CardMedia'
-import CardContent from '@material-ui/core/CardContent'
 import { Typography } from '@material-ui/core'
-import Logo from './images/Logo.jpg'
+import ContentPage from './ContentPage'
 
-const GDPR: React.SFC = () => <Card style={{margin: 24, padding: 24}}>
-    <CardHeader title='Privacy Notice'/>
-    <CardMedia style={{height:0, paddingTop: '30%'}} image={Logo} title='SS Bright Drawers Ltd.'/>
-    <CardContent>
+const GDPR: React.SFC = () => <ContentPage title='Privacy Notice'>
         <Typography>
         <ul>
             <li>Purpose of this notice
@@ -73,7 +66,6 @@ SK9 5AF<br></br>
 Tel: 0303 123 1113<br></br>
 Website: <a href='https://ico.org.uk/concerns'>https://ico.org.uk/concerns</a></p>
         </Typography>
-    </CardContent>
-</Card>
+</ContentPage>
 
 export default GDPR

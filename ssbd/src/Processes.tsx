@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import ProcessesList from './ProcessesList';
+import ContentPage from './ContentPage';
 
 interface Props {
 
@@ -16,7 +18,9 @@ class Processes extends Component<Props, State> {
     }
   }
   render() {
-    return (<p>Processes</p>);
+    return <ContentPage title='Processes'>
+      <ProcessesList/>
+    </ContentPage>
   }
 
 }
