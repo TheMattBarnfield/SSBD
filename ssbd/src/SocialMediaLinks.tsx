@@ -9,8 +9,6 @@ import {Typography} from '@material-ui/core'
 import withWidth, { WithWidth, isWidthUp } from '@material-ui/core/withWidth'
 import {withStyles, Theme, createStyles, WithStyles} from '@material-ui/core/styles'
 
-type Props = WithWidth & WithStyles
-
 const styles = ({breakpoints}: Theme) => createStyles({
   imageStyle: {
     height: '1em',
@@ -32,6 +30,7 @@ const styles = ({breakpoints}: Theme) => createStyles({
   }
 })
 
+type Props = WithWidth & WithStyles<typeof styles>
 
 const SocialMediaLinks: React.SFC<Props> = (props) => <div className={props.classes.container}>
   <div className={props.classes.centered}>

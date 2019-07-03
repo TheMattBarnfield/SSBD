@@ -1,14 +1,14 @@
 import React, { Component } from 'react'
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore'
-import {ExpansionPanel, ExpansionPanelSummary, ExpansionPanelDetails, Typography, Grid} from '@material-ui/core'
+import {Typography, Grid, MenuItem, TextField} from '@material-ui/core'
 import CentrelessGrind from './images/centrelessGrind.jpg'
 import HexagonBar from './images/hexagonBars.jpg'
 import Straightening from './images/straightening.jpg'
 import BrightDrawing from './images/brightdrawing.jpg'
 import ShotBlasting from './images/shotblasting.jpg'
+import {withStyles, Theme, createStyles, WithStyles} from '@material-ui/core/styles'
 
 interface State {
-  open: boolean
+  selected: string
 }
 
 interface Process {
@@ -74,14 +74,28 @@ const processes: Process[] = [{
 },
 ]
 
-class ProcessesList extends Component<{}, State> {
-  constructor(props: {}) {
-    super(props)
-    this.state = {
-      open: true
+const styles = (theme: Theme) => createStyles({
+  select: {
+    width:'30em',
+    maxWidth:'80%',
+    [theme.breakpoints.down('sm')]:{
+      maxWidth:'100%'
     }
   }
+})
+
+type Props = WithStyles<typeof styles>
+
+class ProcessesList extends Component<Props, State> {
+  constructor(props: Props) {
+    super(props)
+    this.state = {
+      selected: processes[0].title
+    }
+  }
+
   render() {
+
     const makeImage = (image: string, alt: string) =>
       <img src={image} alt={alt} style={{width:'100%', borderRadius:5}}/>
 
@@ -89,21 +103,28 @@ class ProcessesList extends Component<{}, State> {
       {content.map(c => <li><Typography>{c}</Typography></li>)}
     </ul>
 
-    const makeExpansionPanel = (process: Process) => <ExpansionPanel>
-      <ExpansionPanelSummary expandIcon={<ExpandMoreIcon/>}>
-        <Typography variant='h6' color='primary'>{process.title}</Typography>
-      </ExpansionPanelSummary>
-      <ExpansionPanelDetails>
-        <Grid container>
-          <Grid item xs={12} sm={5}>{makeImage(process.image, process.title)}</Grid>
-          <Grid item xs={12} sm={7}>{makeUnorderedList(process.content)}</Grid>
-        </Grid>
-      </ExpansionPanelDetails>
-    </ExpansionPanel>
+    const select = <TextField
+      select
+      value={this.state.selected}
+      label='Process'
+      onChange={(event)=>this.setState({selected: event.target.value})}
+      variant='outlined'
+      className={this.props.classes.select}
+    >
+      {processes.map(({title}) => <MenuItem value={title}>{title}</MenuItem>)}
+    </TextField>
 
-    return processes.map(makeExpansionPanel)
+    const process = processes.find((p) => p.title === this.state.selected) || processes[0]
+
+    return <div style={{padding:24}}>
+      <Grid container spacing={24}>
+        <Grid item xs={12} style={{textAlign:'center'}}>{select}</Grid>
+        <Grid item xs={12} sm={7}>{makeUnorderedList(process.content)}</Grid>
+        <Grid item xs={12} sm={5}>{makeImage(process.image, process.title)}</Grid>
+      </Grid>
+    </div>
   }
 
 }
 
-export default ProcessesList;
+export default withStyles(styles)(ProcessesList);
