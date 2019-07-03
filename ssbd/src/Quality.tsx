@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Typography, Card, CardHeader, CardContent, Grid, GridList, GridListTile, GridListTileBar, IconButton } from '@material-ui/core';
 import { Link } from 'react-router-dom';
 import BSI from './images/bsi logo.jpg'
@@ -12,21 +12,26 @@ import Straightness from './images/straightness.jpg'
 interface Certificate {
   name: string,
   logo: string,
-  file: string
+  link: string,
+  download?: boolean
 }
+
+const certificateLink = (file: string): string => `./certificates/${file}.pdf`
 
 const certificates: Certificate[] = [{
   name: 'BSI',
   logo: BSI,
-  file: 'BSI'
+  link: certificateLink('BSI'),
+  download: true
 }, {
   name: 'ISO 9001:2015',
   logo: ISO,
-  file: 'ISO'
+  link: certificateLink('ISO'),
+  download: true
 }, {
   name: 'BSSA',
   logo: BSSA,
-  file: 'bssa'
+  link: 'https://www.bssa.org.uk/'
 }]
 
 const columns = {
@@ -39,7 +44,7 @@ const columns = {
 
 const Quality: React.SFC<WithWidth> = (props: WithWidth) => {
   const makeGridListTile = (certificate: Certificate) => <GridListTile key={certificate.name}>
-    <a href={`./certificates/${certificate.file}.pdf`} download>
+    <a href={certificate.link} download={certificate.download} target='_blank' rel="noopener noreferrer">
       <img src={certificate.logo} alt={certificate.name} style={{width:'100%', height:'100%'}}/>
       <GridListTileBar 
         title={certificate.name}

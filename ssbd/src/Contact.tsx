@@ -1,4 +1,4 @@
-import React, { Component, FormEvent } from 'react'
+import React, { Component } from 'react'
 import TextField from '@material-ui/core/TextField'
 import { Card, CardHeader, CardContent, Typography, MenuItem, Grid, Button, Snackbar } from '@material-ui/core';
 import ContentPage from './ContentPage';
@@ -124,7 +124,7 @@ class Contact extends Component<{}, State> {
       method: 'POST',
       body: data
     }).then(response => {
-      if(response.status==200) {
+      if(response.status===200) {
         this.setState({
           message: '',
           replyMethod: 'email',

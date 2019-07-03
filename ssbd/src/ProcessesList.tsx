@@ -22,7 +22,8 @@ const processes: Process[] = [{
   content: [
     'Round bars up to 52mm diameter',
     'Flat bars up to 170mm x 50mm',
-    'Hexagon bars up to 75mm diameter'
+    'Hexagon bars up to 75mm AF',
+    'Square bars up to 75mm x 75mm'
   ],
   image: Straightening
 }, {
@@ -40,7 +41,23 @@ const processes: Process[] = [{
 }, {
   title: 'Flat and Hexagon Bar Polishing',
   content: [
-    'Up to 75mm section size'
+    '5mm to 125mm section size'
+  ],
+  image: HexagonBar
+}, {
+  title: 'Non-destructive Testing',
+  content: [
+    'Dye penetrant',
+    'Ultrasonic'
+  ],
+  image: HexagonBar
+}, {
+  title: 'Destructive Testing',
+  content: [
+    'Corrosion',
+    'Intercrystalline Corrosion',
+    'Tensile',
+    'Izod'
   ],
   image: HexagonBar
 }, {

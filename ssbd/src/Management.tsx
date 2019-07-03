@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import managers, {Manager} from './Managers'
 import ManagerDetailsCard from './ManagerDetailsCard'
-import { Grid, Typography, Divider } from '@material-ui/core'
+import { Grid } from '@material-ui/core'
 import ContentPage from './ContentPage';
 
 const Management: React.SFC = props =>

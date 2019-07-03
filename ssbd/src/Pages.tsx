@@ -19,7 +19,7 @@ export interface Page {
 
 const pages: Page[] = [{
     path: '/who-we-are',
-    name: 'Who We Are',
+    name: 'Who Are We?',
     page: WhoWeAre,
     image: Factory
   },{

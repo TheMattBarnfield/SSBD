@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import ProcessesList from './ProcessesList';
 import ContentPage from './ContentPage';
 import { Typography, Grid } from '@material-ui/core';
