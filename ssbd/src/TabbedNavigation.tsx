@@ -3,7 +3,7 @@ import { withRouter, RouteComponentProps, Link } from 'react-router-dom'
 import { Tabs, Tab, Paper, Grid } from '@material-ui/core'
 import pages from './Pages'
 import Logo from './images/Logo.jpg'
-import SocialMediaLinks from './SocialMediaLinks';
+import SocialMediaLinks from './SocialMediaLinks'
 import {withStyles, Theme, createStyles, WithStyles} from '@material-ui/core/styles'
 
 const styles = ({palette, typography}: Theme) => createStyles({
