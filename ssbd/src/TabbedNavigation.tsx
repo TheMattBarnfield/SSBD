@@ -33,7 +33,7 @@ const TabbedNavigation: React.SFC<Props> = (props: Props) =>
         </Link>
       </Grid>
       <Grid item xs/>
-      <Grid item xs={3}><SocialMediaLinks/></Grid>
+      <Grid item xs={3} xl={2}><SocialMediaLinks/></Grid>
     </Grid>
     </div>
       <Tabs value={props.location.pathname} indicatorColor='primary' textColor='primary' variant='fullWidth'>
