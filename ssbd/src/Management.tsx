@@ -14,7 +14,7 @@ const Management: React.SFC = props =>
   </ContentPage>
 
 const createManagerDetailsCardInGrid = (manager: Manager) => 
-  <Grid item xs={12} md={6} lg={4} key={manager.name}>
+  <Grid item xs={12} sm={6} lg={4} key={manager.name}>
     <ManagerDetailsCard {...manager}/>
   </Grid>
 

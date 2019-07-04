@@ -69,7 +69,7 @@ const Quality: React.SFC<WithWidth> = (props: WithWidth) => {
     </CardContent>
   </Card>
 
-  const tolerancesText = <Typography>
+  const tolerancesText = <Typography component='span'>
     <ul>
       <li>Our standard grinding tolerances are H9/K9.</li>
       <li>Our standard drawing tolerances are H11/K11.</li>

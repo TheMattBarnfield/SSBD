@@ -17,10 +17,6 @@ const styles = ({palette, typography}: Theme) => createStyles({
     },
     '&:focus': {
       color: palette.primary.light
-    },
-    '&$selected': {
-      color: palette.primary.main,
-      fontWeight: 'bold'
     }
   }
 })

@@ -100,7 +100,7 @@ class ProcessesList extends Component<Props, State> {
       <img src={image} alt={alt} style={{width:'100%', borderRadius:5}}/>
 
     const makeUnorderedList = (content:string[]) => <ul>
-      {content.map(c => <li><Typography>{c}</Typography></li>)}
+      {content.map(c => <li key={c}><Typography>{c}</Typography></li>)}
     </ul>
 
     const select = <TextField
@@ -111,7 +111,7 @@ class ProcessesList extends Component<Props, State> {
       variant='outlined'
       className={this.props.classes.select}
     >
-      {processes.map(({title}) => <MenuItem value={title}>{title}</MenuItem>)}
+      {processes.map(({title}) => <MenuItem value={title} key={title}>{title}</MenuItem>)}
     </TextField>
 
     const process = processes.find((p) => p.title === this.state.selected) || processes[0]

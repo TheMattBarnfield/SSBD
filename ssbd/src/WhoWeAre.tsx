@@ -1,33 +1,21 @@
 import React from 'react'
-import {Typography, Grid} from '@material-ui/core'
 import ContentPage from './ContentPage'
-import 'react-awesome-slider/dist/styles.css';
 import Logo from './images/Logo.jpg'
 import withWidth, { WithWidth } from '@material-ui/core/withWidth'
 import CentrelessGrind from './images/centrelessGrind.jpg'
 import HexagonBar from './images/hexagonBars.jpg'
-import BrightDrawing from './images/brightdrawing.jpg'
 import {withStyles, Theme, createStyles, WithStyles} from '@material-ui/core/styles'
+import {CarouselProvider, Slider, Slide, Image} from 'pure-react-carousel'
+import 'pure-react-carousel/dist/react-carousel.es.css';
+import HText from './HText'
 
 const styles = (theme: Theme) => createStyles({
-  container: {
-    display: 'flex',
-    color: 'rgba(255,255,255,0.87)',
-    width: '100%',
-    backgroundColor: theme.palette.primary.main,
-    backgroundImage: `linear-gradient(to bottom right, ${theme.palette.primary.light}, ${theme.palette.primary.main})`,
-    borderRadius: 5,
-    height: '100%',
-    boxShadow: '5px 5px 20px -12px rgba(0,0,0,0.75)'
-  },
-  centered: {
-    margin:'auto',
-    padding: 10
-  },
-  image: {
-    width:'100%',
-    height:'100%',
-    borderRadius: 5
+  carousel: {
+    width:'60%',
+    margin: '5% auto',
+    [theme.breakpoints.down('sm')]: {
+      width:'90%'
+    }
   },
   highlight: {
     color: theme.palette.primary.dark,
@@ -35,12 +23,10 @@ const styles = (theme: Theme) => createStyles({
   }
 })
 
-type Props = WithWidth & WithStyles
+type Props = WithWidth & WithStyles<typeof styles>
 
 const WhoWeAre: React.SFC<Props> = ({width, classes}) => {
-
-  const HText: React.SFC<{}> = ({children}) =><span className={classes.highlight}>{children}</span>
-
+  
   const captions: React.ReactNode[] = [
     <p><HText>SS Bright Drawers (Sheffield) Ltd</HText> was founded in 1984 to provide a manufacturing partnership facility for our customers on a hire work basis.</p>,
     <p>Our core business is <HText>cold bright drawing</HText> of bars (flats, rounds and hexagons).</p>,
@@ -50,33 +36,23 @@ const WhoWeAre: React.SFC<Props> = ({width, classes}) => {
     <p>We are happy to provide technical advice pertaining to any aspect of <HText>bright drawing</HText> or <HText>surface finishing</HText>.</p>
   ]
 
-  const GridListTextbox: React.SFC<{}> = ({children}) => <Typography variant='h5' align='left' className={classes.container}>
-    <div className={classes.centered}>
-      {children}
-    </div>
-  </Typography>
-
   return(
     <ContentPage title='Who Are We?'>
-      <div style={{padding: 24}}>
-        <Grid container spacing={16}>
-          <Grid item xs={12}><GridListTextbox>{captions[0]}</GridListTextbox></Grid>
-          <Grid item xs={12} md={9}><img src={Logo} className={classes.image} alt="SSBD Logo"/></Grid>
-          <Grid item xs={12} md={3}><GridListTextbox>{captions[1]}</GridListTextbox></Grid>
-          <Grid item xs={12} sm={6} md={4}><img src={CentrelessGrind} className={classes.image} alt="centreless grinding"/></Grid>
-          <Grid item xs={12} sm={6} md={4}><GridListTextbox>{captions[2]}</GridListTextbox></Grid>
-          {width !== 'sm'?<>
-          <Grid item xs={12} sm={7} md={4}><img src={HexagonBar} className={classes.image} alt="hexagon bars"/></Grid>
-          <Grid item xs={12} sm={5} md={5}><GridListTextbox>{captions[3]}</GridListTextbox></Grid>
-          </> : <>
-          <Grid item xs={12} sm={5} md={5}><GridListTextbox>{captions[3]}</GridListTextbox></Grid>
-          <Grid item xs={12} sm={7} md={4}><img src={HexagonBar} className={classes.image} alt="hexagon bar"/></Grid>
-          </>
-          }
-          <Grid item xs={12} md={7}><img src={BrightDrawing} className={classes.image} alt="bright drawing"/></Grid>
-          <Grid item xs={12}><GridListTextbox>{captions[4]}</GridListTextbox></Grid>
-        </Grid>
-      </div>
+      <CarouselProvider
+        naturalSlideWidth={10}
+        naturalSlideHeight={5}
+        totalSlides={3}
+        isPlaying
+        interval={5000}
+        className={classes.carousel}
+      >
+        <Slider style={{borderRadius: 5}}>
+          <Slide index={0}><Image src={Logo} hasMasterSpinner={false}/></Slide>
+          <Slide index={1}><Image src={CentrelessGrind} hasMasterSpinner={false}/></Slide>
+          <Slide index={2}><Image src={HexagonBar} hasMasterSpinner={false}/></Slide>
+        </Slider>
+      </CarouselProvider>
+      {captions}
     </ContentPage>
   )
 }

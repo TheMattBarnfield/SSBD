@@ -3,7 +3,7 @@ import { Typography } from '@material-ui/core'
 import ContentPage from './ContentPage'
 
 const GDPR: React.SFC = () => <ContentPage title='Privacy Notice'>
-        <Typography>
+        <Typography component='span'>
         <ul>
             <li>Purpose of this notice
 <p>This notice describes how SS Bright Drawers (Sheffield) Ltd collect and use personal data about our customers and suppliers, in accordance with the General Data Protection Regulation (GDPR), the Data Protection Act 1998 and any other national implementing laws, regulations and secondary regulation, as amended or updated from time to time, in the UK (Data Protection Legislation).</p></li>
@@ -24,10 +24,10 @@ S9 3JB.</p></li>
 <p>We may process your personal data for the purposes of our own legitimate interests provided that those interests do not override any of your own interests, rights and freedoms which require the protection of personal data.</p>
 <p>We may process your personal data for certain additional purposes with your consent, and where your consent is required then you have the right to withdraw your consent to processing for such specific purposes.</p></li>
 <li>The situations where we will use your personal data include but are not necessarily limited to:
-	<p><ul><li>To enable us to carry out our obligations arising from agreements entered into between you and us.</li>
+	<ul><li>To enable us to carry out our obligations arising from agreements entered into between you and us.</li>
 	<li>Provide you with information relating to our services, events and activities</li>
 	<li>Seek your thoughts and opinions on the services we provide</li>
-	<li>Notify you of any changes to our services or company structure</li></ul></p>
+	<li>Notify you of any changes to our services or company structure</li></ul>
 <p>We may process your personal data without your knowledge or consent, in accordance with this notice, where we are legally required or permitted to do so.</p></li>
 											
 	<li>Data Retention
