@@ -118,24 +118,25 @@ class Contact extends Component<{}, State> {
 
   private submitForm = (event: any) => {
     event.preventDefault()
-    const data = new FormData(event.target)
-    
-    fetch('https://script.google.com/macros/s/AKfycbx5MZOkXHYqP-Ay22jLlPnRsMOVT-25tp_N0I06uqQNF8fVQBM/exec', {
+    const data = {
+      message: this.state.message,
+      replyMethod: this.state.replyMethod,
+      replyDetails: this.state.replyDetails
+    }
+    console.log(data)
+    fetch('http://localhost:8080/contact', {
       method: 'POST',
-      body: data
+      body: JSON.stringify(data),
+      mode: 'no-cors'
     }).then(response => {
-      if(response.status===200) {
-        this.setState({
-          message: '',
-          replyMethod: 'email',
-          replyDetails: '',
-          submissionSuccess: true,
-          submissionError: false
-        })
-      } else {
-        this.setState({submissionError: true})
-      }
-    })
+      this.setState({
+        message: '',
+        replyMethod: 'email',
+        replyDetails: '',
+        submissionSuccess: true,
+        submissionError: false
+      })
+    }).catch(() => this.setState({submissionError: true}))
   }
 
 }
