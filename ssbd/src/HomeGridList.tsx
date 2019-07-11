@@ -21,7 +21,7 @@ const tile: CSSProperties = {
 
 const HomeGridList: React.SFC<WithWidth> = props => 
     <GridList cols={cols[props.width]} spacing={20} style={{margin: 20}}>
-        {pages.map(makeGridListTile)}
+        {pages.slice(1).map(makeGridListTile)}
     </GridList>
 
 const makeGridListTile = (page: Page) => <GridListTile key={page.name}>

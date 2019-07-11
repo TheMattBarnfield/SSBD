@@ -21,7 +21,8 @@ const theme = createMuiTheme({
             contrastText: 'white'
         },
         background: {
-            paper: '#fcfcfc'
+            default: '#fafafa',
+            paper: '#fafafa'
         },
         text: {
             primary: 'rgba(0, 0, 0, 0.87)'

@@ -45,12 +45,12 @@ const SocialMediaLinks: React.SFC<Props> = (props) => <div className={props.clas
         </Link>
       </Tooltip>
       <Tooltip title='Find us on LinkedIn'>
-        <IconButton href='http://www.linkedin.com'>
+        <IconButton href='https://www.linkedin.com'>
           <img src={LinkedIn} alt='LinkedIn' className={props.classes.imageStyle}/>
         </IconButton>
       </Tooltip>
       <Tooltip title='Find us on Facebook'>
-        <IconButton href='http://www.facebook.com'>
+        <IconButton href='https://fb.me/ssbrightdrawers' target='_blank' rel='noopener noreferrer'>
           <img src={Facebook} alt='Facebook' className={props.classes.imageStyle}/>
         </IconButton>
       </Tooltip>

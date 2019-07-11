@@ -23,11 +23,11 @@ const Processes: React.SFC<Props> = props => {
   const image = <img src={ColdDrawn} alt='Processes' style={{width:'100%', borderRadius:5}}/>
 
   return <ContentPage title='Products and Processes'>
-    <div style={{padding:24}}>
+    <div style={{padding:'2%'}}>
       <Grid container spacing={24}>
         <Grid container item alignContent='flex-start' xs={12} md={5} spacing={8} className={props.classes.intro}>
-          <Grid item xs={12} sm={6} md={12} style={{padding:24}}>{preamble}</Grid>
-          <Grid item xs={12} sm={6} md={12} style={{padding:24}}>{image}</Grid>
+          <Grid item xs={12} sm={6} md={12} style={{padding:'2%'}}>{preamble}</Grid>
+          <Grid item xs={12} sm={6} md={12} style={{padding:'2%'}}>{image}</Grid>
         </Grid>
         {isWidthDown('sm', props.width) ? <Grid item xs={12}><Divider /></Grid> : null}
         <Grid item xs={12} md={7}><ProcessesList/></Grid>

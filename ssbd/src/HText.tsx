@@ -3,7 +3,7 @@ import {withStyles, Theme, createStyles, WithStyles} from '@material-ui/core/sty
 
 const styles = (theme: Theme) => createStyles({
   highlight: {
-    color: theme.palette.primary.dark,
+    color: theme.palette.primary.light,
     fontWeight: 'bold'
   }
 })

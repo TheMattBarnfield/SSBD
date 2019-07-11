@@ -6,12 +6,13 @@ import Logo from './images/Logo.jpg'
 import SocialMediaLinks from './SocialMediaLinks'
 import {withStyles, Theme, createStyles, WithStyles} from '@material-ui/core/styles'
 
-const styles = ({palette, typography}: Theme) => createStyles({
+const styles = ({palette}: Theme) => createStyles({
   header: {
-    padding:'2%',
+    padding:'1%',
     backgroundImage: `linear-gradient(to right, white, white, ${palette.primary.light}, ${palette.primary.main}, ${palette.primary.dark})`
   },
   tab: {
+    backgroundImage: `linear-gradient(to bottom, white, ${palette.background.paper})`,
     '&:hover': {
       color: palette.primary.light
     },

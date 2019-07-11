@@ -43,7 +43,7 @@ const columns = {
 }
 
 const Quality: React.SFC<WithWidth> = (props: WithWidth) => {
-  const makeGridListTile = (certificate: Certificate) => <GridListTile key={certificate.name}>
+  const makeGridListTile = (certificate: Certificate) => <GridListTile key={certificate.name} style={{maxWidth:'300px'}}>
     <a href={certificate.link} download={certificate.download} target='_blank' rel="noopener noreferrer">
       <img src={certificate.logo} alt={certificate.name} style={{width:'100%', height:'100%'}}/>
       <GridListTileBar 
@@ -57,7 +57,7 @@ const Quality: React.SFC<WithWidth> = (props: WithWidth) => {
     </a>
   </GridListTile>
   
-  const certificateGridList = <GridList cols={columns[props.width]} spacing={20} style={{margin: 20}}>
+  const certificateGridList = <GridList cols={columns[props.width]} spacing={20} style={{margin: 20, justifyContent: 'center'}}>
     {certificates.map(makeGridListTile)}
   </GridList>
 
