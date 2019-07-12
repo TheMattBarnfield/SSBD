@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Typography, Grid, MenuItem, TextField} from '@material-ui/core'
+import {Typography, MenuItem, TextField} from '@material-ui/core'
 import CentrelessGrind from './images/centrelessGrind.jpg'
 import HexagonBar from './images/hexagonBars.jpg'
 import Straightening from './images/straightening.jpg'
@@ -74,13 +74,35 @@ const processes: Process[] = [{
 },
 ]
 
-const styles = (theme: Theme) => createStyles({
+const styles = ({breakpoints}: Theme) => createStyles({
   select: {
-    width:'30em',
-    maxWidth:'80%',
-    [theme.breakpoints.down('sm')]:{
-      maxWidth:'100%'
+    gridColumnStart: 1,
+    gridRowStart: 2,
+    gridColumnEnd: 'span',
+    [breakpoints.up('sm')]: {
+      gridColumnStart: 2,
+      gridColumnEnd: 'span 1',
     }
+  },
+  container: {
+    padding: '1em',
+    display: 'grid',
+    gridTemplateRows: 'repeat(3, auto)',
+    gridTemplateColumns: '1fr 3fr 1fr',
+    gridGap: '0.5em',
+    [breakpoints.up('sm')]: {
+      paddingTop: 0
+    }
+  },
+  process: {
+    gridColumnStart: 1,
+    gridColumnEnd: 'span',
+    gridRowStart: 3
+  },
+  heading: {
+    gridColumnStart: 1,
+    gridRowStart: 1,
+    gridColumnEnd: 'span'
   }
 })
 
@@ -95,10 +117,7 @@ class ProcessesList extends Component<Props, State> {
   }
 
   render() {
-
-    const makeImage = (image: string, alt: string) =>
-      <img src={image} alt={alt} style={{width:'100%', borderRadius:5}}/>
-
+    const classes = this.props.classes
     const makeUnorderedList = (content:string[]) => <ul>
       {content.map(c => <li key={c}><Typography>{c}</Typography></li>)}
     </ul>
@@ -116,12 +135,10 @@ class ProcessesList extends Component<Props, State> {
 
     const process = processes.find((p) => p.title === this.state.selected) || processes[0]
 
-    return <div style={{padding:24}}>
-      <Grid container spacing={24}>
-        <Grid item xs={12} style={{textAlign:'center'}}>{select}</Grid>
-        <Grid item xs={12} sm={7}>{makeUnorderedList(process.content)}</Grid>
-        <Grid item xs={12} sm={5}>{makeImage(process.image, process.title)}</Grid>
-      </Grid>
+    return <div className={classes.container}>
+      <Typography color='primary' variant='h4' component='h2' className={classes.heading} gutterBottom>What We Offer</Typography>
+      {select}
+      <div className={classes.process}>{makeUnorderedList(process.content)}</div>
     </div>
   }
 
