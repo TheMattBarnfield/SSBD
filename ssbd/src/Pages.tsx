@@ -1,5 +1,6 @@
 import React from 'react'
-import Trees from './images/trees.jpg'
+import GDPRImage from './images/gdpr.jpg'
+import ContactImage from './images/contact.jpg'
 import Processes from './Processes';
 import Quality from './Quality';
 import GDPR from './GDPR';
@@ -9,6 +10,7 @@ import Home from './Home';
 import QualityImage from './images/quality.jpg'
 import Factory from './images/factory.jpg'
 import CentrelessBars from './images/centrelessbars.jpg'
+import Trees from './images/trees.jpg'
 
 export interface Page {
     path: string
@@ -32,21 +34,21 @@ const pages: Page[] = [{
     name: 'Quality',
     page: Quality,
     image: QualityImage
-  }, {
-    path: '/gdpr',
-    name: 'GDPR Statement',
-    page: GDPR,
-    image: Trees
-  }, {
+  },  {
     path: '/management',
     name: 'Management',
     page: Management,
     image: Trees
   }, {
+    path: '/gdpr',
+    name: 'GDPR Statement',
+    page: GDPR,
+    image: GDPRImage
+  },{
     path: '/contact-us',
     name: 'Contact Us',
     page: Contact,
-    image: Trees
+    image: ContactImage
 }]
 
 export default pages

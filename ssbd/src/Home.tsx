@@ -5,6 +5,7 @@ import HomeGridList from './HomeGridList'
 import HText from './HText'
 import HomepageCarousel from './HomepageCarousel';
 import { withStyles, WithStyles, createStyles, Theme } from '@material-ui/core/styles'
+import Footer from './Footer'
 
 const styles = ({palette, breakpoints}: Theme) => createStyles({
   slogan: {
@@ -104,6 +105,7 @@ const Home: React.SFC<Props> = ({classes}) => <div className={classes.container}
     <Divider variant='middle'/>
     <HomeGridList />
   </div>
+  <Footer/>
 </div>
 
 export default withStyles(styles)(Home)

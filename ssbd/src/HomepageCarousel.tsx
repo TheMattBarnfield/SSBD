@@ -1,7 +1,7 @@
 import React, {CSSProperties} from 'react'
 import CentrelessGrind from './images/centrelessGrind.jpg'
 import HexagonBar from './images/hexagonBars.jpg'
-import Quality from './images/quality.jpg'
+import Factory from './images/factory-carousel.jpg'
 import {withStyles, Theme, createStyles, WithStyles} from '@material-ui/core/styles'
 import {CarouselProvider, Slider, Slide, Image} from 'pure-react-carousel'
 import 'pure-react-carousel/dist/react-carousel.es.css';
@@ -29,7 +29,7 @@ const HomepageCarousel: React.SFC<Props> = ({className, style, classes}) =>
       className={classes.carousel}
       >
       <Slider style={{borderRadius: 'inherit'}}>
-        <Slide index={0}><Image src={Quality} hasMasterSpinner={false}/></Slide>
+        <Slide index={0}><Image src={Factory} hasMasterSpinner={false}/></Slide>
         <Slide index={1}><Image src={CentrelessGrind} hasMasterSpinner={false}/></Slide>
         <Slide index={2}><Image src={HexagonBar} hasMasterSpinner={false}/></Slide>
       </Slider>

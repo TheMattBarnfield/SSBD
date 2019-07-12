@@ -1,4 +1,7 @@
-import Trees from './images/trees.jpg'
+import Darren from './images/darren.jpg'
+import Mike from './images/mike.jpg'
+import Steve from './images/steve.jpg'
+import Jenny from './images/jenny.jpg'
 
 export interface Manager{
     name: string
@@ -9,34 +12,28 @@ export interface Manager{
 }
 
 const managers: Manager[] = [{
-    name: 'John Smith',
+    name: 'Darren Barnfield',
     email: 'j.s@ssbrightdrawers.co.uk',
-    image: Trees,
-    role: 'CEO',
+    image: Darren,
+    role: '[something]',
     phoneNumber: '12345678910'
 }, {
-    name: 'John Smith',
+    name: 'Mike Barnfield',
     email: 'j.s@ssbrightdrawers.co.uk',
-    image: Trees,
-    role: 'CEO',
+    image: Mike,
+    role: 'Executive Director',
     phoneNumber: '12345678910'
 }, {
-    name: 'John Smith',
+    name: 'Steve Perry',
     email: 'j.s@ssbrightdrawers.co.uk',
-    image: Trees,
-    role: 'CEO',
+    image: Steve,
+    role: 'Production Manager',
     phoneNumber: '12345678910'
 }, {
-    name: 'John Smith',
+    name: 'Jenny Barnfield',
     email: 'j.s@ssbrightdrawers.co.uk',
-    image: Trees,
-    role: 'CEO',
-    phoneNumber: '12345678910'
-}, {
-    name: 'John Smith',
-    email: 'j.s@ssbrightdrawers.co.uk',
-    image: Trees,
-    role: 'CEO',
+    image: Jenny,
+    role: 'Office Administrator',
     phoneNumber: '12345678910'
 }]
 

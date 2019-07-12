@@ -30,30 +30,32 @@ const styles = ({breakpoints}: Theme) => createStyles({
   }
 })
 
-type Props = WithWidth & WithStyles<typeof styles>
+type Props = {className: any} & WithWidth & WithStyles<typeof styles>
 
-const SocialMediaLinks: React.SFC<Props> = (props) => <div className={props.classes.container}>
-  <div className={props.classes.centered}>
-    {isWidthUp('md', props.width)?
-      <div style={{color:'white'}}><Typography color='inherit'>Get in touch:</Typography></div>:null}
-    <div>
-      <Tooltip title='Contact us directly'>
-        <Link to='/contact-us' style={{textDecoration: 'none'}}>
-          <IconButton style={{color: 'white'}}>
-            <Contact className={props.classes.imageStyle}/>
+const SocialMediaLinks: React.SFC<Props> = (props) => <div className={props.className}>
+  <div className={props.classes.container}>
+    <div className={props.classes.centered}>
+      {isWidthUp('md', props.width)?
+        <div style={{color:'white'}}><Typography color='inherit'>Get in touch:</Typography></div>:null}
+      <div>
+        <Tooltip title='Contact us directly'>
+          <Link to='/contact-us' style={{textDecoration: 'none'}}>
+            <IconButton style={{color: 'white'}}>
+              <Contact className={props.classes.imageStyle}/>
+            </IconButton>
+          </Link>
+        </Tooltip>
+        <Tooltip title='Find us on LinkedIn'>
+          <IconButton href='https://www.linkedin.com'>
+            <img src={LinkedIn} alt='LinkedIn' className={props.classes.imageStyle}/>
           </IconButton>
-        </Link>
-      </Tooltip>
-      <Tooltip title='Find us on LinkedIn'>
-        <IconButton href='https://www.linkedin.com'>
-          <img src={LinkedIn} alt='LinkedIn' className={props.classes.imageStyle}/>
-        </IconButton>
-      </Tooltip>
-      <Tooltip title='Find us on Facebook'>
-        <IconButton href='https://fb.me/ssbrightdrawers' target='_blank' rel='noopener noreferrer'>
-          <img src={Facebook} alt='Facebook' className={props.classes.imageStyle}/>
-        </IconButton>
-      </Tooltip>
+        </Tooltip>
+        <Tooltip title='Find us on Facebook'>
+          <IconButton href='https://fb.me/ssbrightdrawers' target='_blank' rel='noopener noreferrer'>
+            <img src={Facebook} alt='Facebook' className={props.classes.imageStyle}/>
+          </IconButton>
+        </Tooltip>
+      </div>
     </div>
   </div>
 </div>
