@@ -30,7 +30,7 @@ const styles = ({breakpoints}: Theme) => createStyles({
   }
 })
 
-type Props = {className: any} & WithWidth & WithStyles<typeof styles>
+type Props = {className?: any} & WithWidth & WithStyles<typeof styles>
 
 const SocialMediaLinks: React.SFC<Props> = (props) => <div className={props.className}>
   <div className={props.classes.container}>
